@@ -11,18 +11,18 @@
                     [
                         {
                             "type": "label",
-                            "label": "Control your Remote Computer via SSH. You must enable your SSH server on your remote computer for power off and configure wake on LAN for power on."
+                            "label": "Control your Remote Computer via SSH and WOL. You must enable your SSH server on your remote computer for power off and configure wake on LAN for power on."
                         },
                         {
                             "name": "ip_address",
                             "type": "text",
-                            "label": "IP Address (EX. 192.168.0.180):",
+                            "label": "IP Address (E.G. 192.168.0.180):",
                             "value": ""
                         },
                         {
                             "name": "mac_address",
                             "type": "text",
-                            "label": "MAC Address (EX. 00:24:1d:b6:0c:97):",
+                            "label": "MAC Address (E.G. 00:24:1d:b6:0c:97):",
                             "value": ""
                         },
                         {

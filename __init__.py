@@ -2,7 +2,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.skills.core import intent_handler
 
-__author__ = "S. M. Estiaque Ahmed"
+__author__ = "smearumi"
 
 
 class RemoteComputerSkill(MycroftSkill):
