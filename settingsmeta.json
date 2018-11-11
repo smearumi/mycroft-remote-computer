@@ -1,0 +1,56 @@
+{
+    "name": "Mycroft Remore Computer Skill",
+    "color": "#22a7f0",
+    "skillMetadata":
+        {
+           "sections":
+            [
+                {
+                   "name": "Configuration",
+                   "fields":
+                    [
+                        {
+                            "type": "label",
+                            "label": "Control your Remote Computer via SSH. You must enable your SSH server on your PC for power off and configure wake on LAN for power on."
+                        },
+                        {
+                            "name": "ip_address",
+                            "type": "text",
+                            "label": "IP Address (EX. 192.168.0.180):",
+                            "value": ""
+                        },
+                        {
+                            "name": "mac_address",
+                            "type": "text",
+                            "label": "MAC Address (EX. 00:24:1d:b6:0c:97):",
+                            "value": ""
+                        },
+                        {
+                            "name": "port",
+                            "type": "number",
+                            "label": "Port",
+                            "value": 22
+                        },
+                        {
+                            "name": "user",
+                            "type": "text",
+                            "label": "User Name:",
+                            "value": ""
+                        },
+                        {
+                            "name": "user_password",
+                            "type": "password",
+                            "label": "User Password:",
+                            "value": ""
+                        },
+                        {
+                            "name": "sudo_password",
+                            "type": "password",
+                            "label": "Sudo Password (Root Password):",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        }
+}
