@@ -1,14 +1,20 @@
-# mycroft-remote-computer
-A skill to control a remote computer via ssh and wake on lan. (Power ON/OFF)
+# Remote Computer
+A skill to control a remote computer via SSH and Wake on Lan. (Power ON/OFF)
 
 ## About
-    sudo msm install https://github.com/augustnmonteiro/mycroft-youtube.git
+Turn ON/OFF your computer via ssh from mycroft. You must enable SSH on your remote computer 
+for Powere OFF and also you have enable Wake on Lan for Power ON.
+
+Supported OS:
+* Linux (Tested)
+* Mac (Tested)
+* Windows (Not Tested)
 
 ## Examples 
-* Say `turn on the computer`
-* Say `turn on the computer`
-* Say `computer off`
-* Say `turn on my computer`
+* "turn on the computer"
+* "turn on the computer"
+* "computer off"
+* "turn on my computer"
 
 ## Installation
 Should be able to install this now via `msm install https://github.com/smearumi/mycroft-remote-computer.git`
