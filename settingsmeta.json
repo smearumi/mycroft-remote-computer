@@ -1,5 +1,5 @@
 {
-    "name": "Mycroft Remore Computer Skill",
+    "name": "Mycroft Remote Computer Skill",
     "color": "#22a7f0",
     "skillMetadata":
         {
@@ -11,7 +11,7 @@
                     [
                         {
                             "type": "label",
-                            "label": "Control your Remote Computer via SSH. You must enable your SSH server on your PC for power off and configure wake on LAN for power on."
+                            "label": "Control your Remote Computer via SSH. You must enable your SSH server on your remote computer for power off and configure wake on LAN for power on."
                         },
                         {
                             "name": "ip_address",

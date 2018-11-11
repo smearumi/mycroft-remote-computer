@@ -52,7 +52,7 @@ class RemoteComputerSkill(MycroftSkill):
             port = int(self.settings.get("port"))
             user = str(self.settings.get("user"))
             user_password = str(self.settings.get("user_password"))
-            sudo_password = str(self.settings.get("sudo passord"))
+            sudo_password = str(self.settings.get("sudo_password"))
 
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
