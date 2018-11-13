@@ -15,7 +15,12 @@ class RemoteComputerSkill(MycroftSkill):
         from wakeonlan import send_magic_packet
 
         try:
-            mac_address = str(self.settings.get("mac_address"))
+            config = self.config_core.get("RemoteComputerSkill", {})
+
+            if not config == {}:
+                mac_address = str(config.get("mac_address"))
+            else:
+                mac_address = str(self.settings.get("mac_address"))
 
             re_mac = "[0-9a-f]{2}([-:]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$"
 
@@ -43,16 +48,26 @@ class RemoteComputerSkill(MycroftSkill):
         import ipaddress
 
         try:
-            try:
-                ip = ipaddress.ip_address(str(self.settings.get("ip_address")))
-            except ValueError:
-                self.speak_dialog("invalid", {"word": "I.P."})
-                return
+            config = self.config_core.get("RemoteComputerSkill", {})
 
-            port = int(self.settings.get("port"))
-            user = str(self.settings.get("user"))
-            user_password = str(self.settings.get("user_password"))
-            sudo_password = str(self.settings.get("sudo_password"))
+            if not config == {}:
+                ip_address = str(self.config.get("ip_address"))
+                port = int(self.config.get("port"))
+                user = str(self.config.get("user"))
+                user_password = str(self.config.get("user_password"))
+                sudo_password = str(self.config.get("sudo_password"))
+            else:
+                ip_address = str(self.settings.get("ip_address"))
+                port = int(self.settings.get("port"))
+                user = str(self.settings.get("user"))
+                user_password = str(self.settings.get("user_password"))
+                sudo_password = str(self.settings.get("sudo_password"))
+
+            try:
+                ip = ipaddress.ip_address(ip_address)
+            except ValueError:
+                self.speak_dialog("invalid", {"word": "I.P"})
+                return
 
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
