@@ -22,7 +22,7 @@ For Power ON (Wake on LAN):
 * "turn the computer on"
 
 ## Installation
-YOu should be able to install this via `mycroft-msm install https://github.com/smearumi/mycroft-remote-computer.git` or you can install via Installer Skill from web interface (https://home.mycroft.ai/#/skill). It will take several minutes for installing requirements.
+You should be able to install skill via `mycroft-msm install https://github.com/smearumi/mycroft-remote-computer.git` or you can install this skill via Installer Skill from web interface (https://home.mycroft.ai/#/skill). It will take several minutes for installing requirements.
 
 ## Configuration
 You can configure this skill via web interface (home.mycroft.ai). After a few minutes of having the skill installed, you should see configuration options in the https://home.mycroft.ai/#/skill location.
