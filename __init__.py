@@ -47,7 +47,7 @@ class RemoteComputerSkill(MycroftSkill):
             self.log.error(e)
             return
 
-        re_mac = "[0-9a-f]{2}([-:]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$"        
+        re_mac = "[0-9a-f]{2}([-:]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$"
 
         if re.match(re_mac, mac_address.lower()):
             if ':' in mac_address:
@@ -61,7 +61,7 @@ class RemoteComputerSkill(MycroftSkill):
             return
 
         prompt_response = self.ask_yesno("ask.confirmation",
-                                         {"word": "power on"})
+                                         {"word": "turn on"})
 
         if prompt_response == "yes":
             try:
@@ -87,6 +87,7 @@ class RemoteComputerSkill(MycroftSkill):
                 user = str(self.config.get("user"))
                 user_password = str(self.config.get("user_password"))
                 sudo_password = str(self.config.get("sudo_password"))
+
             else:
                 ip_address = str(self.settings.get("ip_address"))
                 port = int(self.settings.get("port"))
@@ -111,7 +112,7 @@ class RemoteComputerSkill(MycroftSkill):
             return
 
         prompt_response = self.ask_yesno("ask.confirmation",
-                                         {"word": "turn on"})
+                                         {"word": "shut down"})
 
         if prompt_response == "yes":
             try:
