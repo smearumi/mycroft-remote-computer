@@ -1,3 +1,17 @@
+# Copyright 2018 S. M. Estiaque Ahmed
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import re
 import sys
 import paramiko
@@ -7,8 +21,6 @@ from wakeonlan import send_magic_packet
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.skills.core import intent_handler
-
-__author__ = "smearumi"
 
 
 class RemoteComputerSkill(MycroftSkill):
@@ -95,7 +107,7 @@ class RemoteComputerSkill(MycroftSkill):
             session.set_combine_stderr(True)
             session.get_pty()
 
-            if sys.platform.startswith('win'):
+            if sys.platform.startswith("win"):
                 session.exec_command("shutdown /s")
             else:
                 session.exec_command("sudo -k shutdown -h now")
