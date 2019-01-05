@@ -1,3 +1,9 @@
+import re
+import sys
+import paramiko
+import ipaddress
+from wakeonlan import send_magic_packet
+
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.skills.core import intent_handler
@@ -9,11 +15,9 @@ class RemoteComputerSkill(MycroftSkill):
     def __init__(self):
         super(RemoteComputerSkill, self).__init__(name="RemoteComputerSkill")
 
-    @intent_handler(IntentBuilder("TurnOnIntent").require("TurnOnKeyword"))
+    @intent_handler(IntentBuilder("TurnOnIntent").require("Turn")
+                    .require("Computer").require("On"))
     def handle_turn_on_intent(self, message):
-        import re
-        from wakeonlan import send_magic_packet
-
         try:
             config = self.config_core.get("RemoteComputerSkill", {})
 
@@ -30,6 +34,11 @@ class RemoteComputerSkill(MycroftSkill):
                 elif '-' in mac_address:
                     mac_address.replace('-', '.')
 
+                if self.ask_yesno("ask.confirmation",
+                                  {"word": "power on"}) == "no":
+                    self.speak_dialog("okay")
+                    return
+
                 send_magic_packet(mac_address)
 
                 self.speak_dialog("computer.on")
@@ -41,12 +50,9 @@ class RemoteComputerSkill(MycroftSkill):
             self.speak_dialog("connection.error")
             self.log.error(e)
 
-    @intent_handler(IntentBuilder("TurnOffIntent").require("TurnOffKeyword"))
+    @intent_handler(IntentBuilder("TurnOffIntent").require("Turn")
+                    .require("Computer").require("Off"))
     def handle_turn_off_intent(self, message):
-        import sys
-        import paramiko
-        import ipaddress
-
         try:
             config = self.config_core.get("RemoteComputerSkill", {})
 
@@ -65,8 +71,14 @@ class RemoteComputerSkill(MycroftSkill):
 
             try:
                 ip = ipaddress.ip_address(ip_address)
+
             except ValueError:
                 self.speak_dialog("invalid", {"word": "I.P"})
+                return
+
+            if self.ask_yesno("ask.confirmation",
+                              {"word": "shut down"}) == "no":
+                self.speak_dialog("okay")
                 return
 
             client = paramiko.SSHClient()
