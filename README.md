@@ -40,7 +40,7 @@ If it does not exist, create it. This file must be contain a valid json, add the
 ## Examples 
 * "turn off my computer"
 * "turn my computer off"
-* ""shut down the computer"
+* "shut down the computer"
 * "turn on the computer"
 * "wake up my computer"
 
