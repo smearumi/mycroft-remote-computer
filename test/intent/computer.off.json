@@ -1,0 +1,9 @@
+{
+  "utterance": "Turn the computer off",
+  "intent_type": "ComputerOffIntent",
+  "intent": {
+    "Computer": "computer",
+    "Off": "off"
+  },
+  "expected_dialog": "computer.off"
+}

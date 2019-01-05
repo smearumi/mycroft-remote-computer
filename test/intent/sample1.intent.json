@@ -1,7 +1,0 @@
-{
-  "utterance": "Turn my computer on",
-  "intent_type": "TurnOnIntent",
-  "intent": {
-    "TurnOnKeyword": "computer on."
-  }
-}

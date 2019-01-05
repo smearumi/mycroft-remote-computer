@@ -1,0 +1,9 @@
+{
+  "utterance": "Turn the computer on",
+  "intent_type": "ComputerOnIntent",
+  "intent": {
+    "Computer": "computer",
+    "On": "on"
+  },
+  "expected_dialog": "computer.on"
+}

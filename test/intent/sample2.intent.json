@@ -1,7 +1,0 @@
-{
-  "utterance": "Turn the computer off",
-  "intent_type": "TurnOffIntent",
-  "intent": {
-    "TurnOffKeyword": "computer off."
-  }
-}
