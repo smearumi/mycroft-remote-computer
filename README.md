@@ -5,12 +5,12 @@ Control a remote computer via SSH and Wake on Lan. (Power OFF/ON)
 Turn OFF/ON your computer via SSH and WOL from mycroft. You must enable SSH Server on your remote computer for Power OFF and also you have to enable Wake on Lan for Power ON.
 
 For Power OFF (Supported Remote Computer OS with SSH Server):
-* Linux (Tested)
-* Mac (Tested)
-* Windows (Tested)
+* Linux
+* Mac
+* Windows
 
 For Power ON (Wake on LAN):
-* Not Tested.
+* Any WOL supported computer
 
 ## Installation
 You should be able to install skill via `mycroft-msm install https://github.com/smearumi/mycroft-remote-computer.git` or you can install this skill via Installer Skill from web interface (https://home.mycroft.ai/#/skill). It will take several minutes for installing requirements.
