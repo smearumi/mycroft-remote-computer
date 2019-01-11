@@ -50,6 +50,7 @@ S. M. Estiaque Ahmed (@smearumi)
 
 
 ## Category
+Daily
 **IoT**
 
 ## Tags
@@ -57,4 +58,6 @@ S. M. Estiaque Ahmed (@smearumi)
 #skill
 #remote
 #computer
-#homeassistant
+#home
+#voice
+#assistant
