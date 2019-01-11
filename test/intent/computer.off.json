@@ -1,5 +1,5 @@
 {
-  "utterance": "Turn the computer off",
+  "utterance": "turn the computer off",
   "intent_type": "ComputerOffIntent",
   "intent": {
     "Computer": "computer",
